@@ -1,6 +1,8 @@
 # jVectorMapKibanaCountry
 
-An Offline country code map visualizer for Kibana 4.4.
+An Offline country code map visualizer for Kibana 5.0.
+
+Version for 4.4 available here: https://github.com/snuids/jVectorMapKibanaCountry
 
 Copyright 2016 Arnaud Marchand
 
@@ -16,3 +18,5 @@ The "Normalize Input To UpperCase" simply aggregates lower and upper case values
 Maps provided by: http://jvectormap.com/ are not free of charge for commercial products.
 
 Screenshots here: https://github.com/snuids/jVectorMapKibanaCountry/wiki
+
+More info on docker and kibana here: http://pi2s.wordpress.com
