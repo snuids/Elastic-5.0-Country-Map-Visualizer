@@ -4,8 +4,6 @@ An Offline country code map visualizer for Kibana 5.0.
 
 Version for 4.4 available here: https://github.com/snuids/jVectorMapKibanaCountry
 
-Copyright 2016 Arnaud Marchand
-
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
 http://www.apache.org/licenses/LICENSE-2.0
@@ -20,3 +18,5 @@ Maps provided by: http://jvectormap.com/ are not free of charge for commercial p
 Screenshots here: https://github.com/snuids/jVectorMapKibanaCountry/wiki
 
 More info on docker and kibana here: http://pi2s.wordpress.com
+
+Copyright 2016 Arnaud Marchand
