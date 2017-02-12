@@ -2,6 +2,19 @@ svg {
     touch-action: none;
 }
 
+.jvectormaphint
+{
+	position: absolute;
+	top:10px;
+	left:40px;
+	border:solid 1px #fff;
+	background-color:black;
+  color:white;
+	padding:1px;
+	font-size:10px;
+	z-index:10;
+}
+
 .jvectormaplegend
 {
 	position: absolute;
