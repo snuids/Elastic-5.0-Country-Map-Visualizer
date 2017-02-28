@@ -17,7 +17,7 @@ function jvectormapcountryProvider(Private) {
 
 	// Describe our visualization
 	return new TemplateVisType({
-		name: 'jvectormapcountry', // The internal id of the visualization (must be unique)
+		name: 'jVectorMapCountry', // The internal id of the visualization (must be unique)
 		title: 'Offline Country Map', // The title of the visualization, shown to the user
 		description: 'Offline Country Map Visualizer using jVectormap.', // The description of this vis
 		icon: 'fa-map', // The font awesome icon of this visualization
