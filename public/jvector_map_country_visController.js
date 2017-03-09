@@ -7,7 +7,7 @@ module.controller('JVectorMapCountryController', function($scope, Private) {
 	var filterManager = Private(require('ui/filter_manager'));
 
 
-
+	$scope.hint=null
 
 	$scope.filter = function(tag) {
 		// Add a new filter via the filter manager
@@ -111,6 +111,13 @@ module.controller('JVectorMapCountryController', function($scope, Private) {
 			        }]
 			      },
 			      onRegionTipShow: function(e, el, code){
+							
+
+							if(data[code]== undefined)
+								$scope.hint=null
+							else
+								$scope.hint=code+":"+data[code]
+
 			        el.html(el.html()+' ('+data[code]+')');
 			      }
 				  ,
