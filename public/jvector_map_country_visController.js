@@ -36,22 +36,30 @@ module.controller('JVectorMapCountryController', function($scope, Private) {
 		}
 
 		// Retrieve the id of the configured tags aggregation
+		//console.log("Getting AggID")
 		var locationsAggId = $scope.vis.aggs.bySchemaName['countries'][0].id;
+		//console.log(locationsAggId)
 		// Retrieve the metrics aggregation configured
-		var metricsAgg = $scope.vis.aggs.bySchemaName['countryvalue'][0];
+		//console.log("Getting MetricID")
+		var metricsAgg = null;
+		if($scope.vis.aggs.bySchemaName['countryvalue'] != undefined)
+			metricsAgg=$scope.vis.aggs.bySchemaName['countryvalue'][0];
+		//console.log(metricsAgg)
 		var buckets = resp.aggregations[locationsAggId].buckets;
 
 
 		// Transform all buckets into tag objects
 		$scope.locations = buckets.map(function(bucket) {
 			// Use the getValue function of the aggregation to get the value of a bucket
+				if(metricsAgg!=null)
+				{
+					var value = metricsAgg.getValue(bucket);
 
-				var value = metricsAgg.getValue(bucket);
-
-				return {
-					label: bucket.key,
-					value: value
-				};
+					return {
+						label: bucket.key,
+						value: value
+					};
+				}
 
 		});
 
@@ -87,7 +95,9 @@ module.controller('JVectorMapCountryController', function($scope, Private) {
 		var data={};
 
 		angular.forEach($scope.locations, function(value, key){
-			if(value.label!=undefined)
+			//console.log("==");
+			//console.log(value);
+			if((value!=undefined)&&(value.label!=undefined))
 				data[value.label.toUpperCase()]=value.value;
 
 		});
@@ -111,7 +121,7 @@ module.controller('JVectorMapCountryController', function($scope, Private) {
 			        }]
 			      },
 			      onRegionTipShow: function(e, el, code){
-							
+
 
 							if(data[code]== undefined)
 								$scope.hint=null
